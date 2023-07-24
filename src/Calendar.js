@@ -126,7 +126,9 @@ const Calendar = React.forwardRef(
       if (onDisplayedDateChangeEnd) {
         onDisplayedDateChangeEnd(newActiveDate);
       }
-      onChangeActiveDate(newActiveDate);
+      if(onChangeActiveDate) {
+        onChangeActiveDate(newActiveDate);
+      }
     };
 
     const selectYear = year => {
@@ -139,7 +141,9 @@ const Calendar = React.forwardRef(
       if (onDisplayedDateChangeEnd) {
         onDisplayedDateChangeEnd(newActiveDate);
       }
-      onChangeActiveDate(newActiveDate);
+      if(onChangeActiveDate) {
+        onChangeActiveDate(newActiveDate);
+      }
     };
 
     useImperativeHandle(ref, () => ({

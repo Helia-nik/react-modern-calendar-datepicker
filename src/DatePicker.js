@@ -8,6 +8,7 @@ import { TYPE_SINGLE_DATE, TYPE_MUTLI_DATE, TYPE_RANGE } from './shared/constant
 const DatePicker = ({
   value,
   onChange,
+  onChangeActiveDate,
   onDisplayedDateChangeEnd,
   onDisplayedDateChangeStart,
   formatInputText,
@@ -170,6 +171,7 @@ const DatePicker = ({
               ref={calendarRef}
               value={value}
               onChange={handleCalendarChange}
+              onChangeActiveDate={onChangeActiveDate}
               onDisplayedDateChangeEnd={onDisplayedDateChangeEnd}
               onDisplayedDateChangeStart={onDisplayedDateChangeStart}
               calendarClassName={calendarClassName}

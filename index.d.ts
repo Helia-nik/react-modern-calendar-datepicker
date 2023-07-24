@@ -47,6 +47,7 @@ export interface CalendarProps<TValue extends Value> {
   calendarRangeEndClassName?: string;
   renderFooter?: React.FC;
   customDaysClassName?: CustomDayClassNameItem[];
+  onChangeActiveDate?(value: Day): void;
 }
 
 export function Calendar(props: Optional<CalendarProps<DayValue>, 'value'> & CalendarRefProp): React.ReactElement;

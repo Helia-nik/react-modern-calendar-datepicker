@@ -11,6 +11,7 @@ const Calendar = React.forwardRef(
     {
       value,
       onChange,
+      onChangeActiveDate,
       onDisplayedDateChangeEnd,
       onDisplayedDateChangeStart,
       onDisabledDayError,
@@ -125,6 +126,7 @@ const Calendar = React.forwardRef(
       if (onDisplayedDateChangeEnd) {
         onDisplayedDateChangeEnd(newActiveDate);
       }
+      onChangeActiveDate(newActiveDate);
     };
 
     const selectYear = year => {
@@ -137,6 +139,7 @@ const Calendar = React.forwardRef(
       if (onDisplayedDateChangeEnd) {
         onDisplayedDateChangeEnd(newActiveDate);
       }
+      onChangeActiveDate(newActiveDate);
     };
 
     useImperativeHandle(ref, () => ({
@@ -230,6 +233,7 @@ Calendar.defaultProps = {
   value: null,
   renderFooter: () => null,
   customDaysClassName: [],
+  onChangeActiveDate: () => {},
 };
 
 export { Calendar };
